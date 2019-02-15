@@ -16,6 +16,21 @@ function surFaceRectangle() {
             console.log("Affichage du résultat" + (resultat));
             alert(resultat);
 
+}
+
+function periRectangle() {
+
+            let largeur= Number(prompt('Saisissez une largeur'));
+            console.log("L'utilisateur a entré une deuxième largeur");
+
+            let longueur = Number(prompt('Saisissez une longueur'));
+            console.log("L'utilisateur a entré une deuxième longueur");
+
+            console.log("Opération en cours");
+            let resultat = (largeur + longueur * 2);
+
+            console.log("Affichage du résultat " + (resultat));
+            alert(resultat);
 
 
 }
