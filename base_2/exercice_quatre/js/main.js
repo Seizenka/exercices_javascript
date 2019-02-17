@@ -5,10 +5,7 @@ function affiche() {
     function additionne(x) {
         return x + 2;
     }
-    alert(additionne(tab[tab.length * 0]));
-    alert(additionne(tab[tab.length - 1]));
-
-
-     
+    alert(additionne(tab[0]));
+    alert(additionne(tab[tab.length - 1]));  
 }
 
