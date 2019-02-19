@@ -15,23 +15,25 @@ let concatString = function (texte1, texte2) {
    return texte1+texte2;
    
 }
-var afficherCar5 = function (texte) {
-
+let afficherCar5 = function (texte) {
+    return (texte[4]);
 }
-var afficher9Car = function (texte) {
-
+let afficher9Car = function (texte) {
+    return texte.slice(0,9);
 }
-var majusculeString = function (texte) {
-
+let majusculeString = function (texte) {
+    return texte.toUpperCase();
 }
-var minusculeString = function (texte) {
-
+let minusculeString = function (texte) {
+    return texte.toLowerCase();
 }
-var SupprEspaceString = function (texte) {
-
+let SupprEspaceString = function (texte) {
+    return texte.replace(/(^\s*)|(\s*$)/g,"");
 }
-var IsString = function (texte) {
-
+let IsString = function (texte) {
+    if(true) {
+    IsString = typeof texte;
+    }
 }
 
 var AfficherExtensionString = function (texte) {
