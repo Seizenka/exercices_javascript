@@ -64,7 +64,8 @@ let sufaceCercle = function (rayon) {
     return Math.round(Math.PI * (rayon * rayon));
 }
 var hypothenuse = function (ab, ac) {
-    
+    return (Math.sqrt((ab * ab) + (ac * ac)));
+   
 }
 let calculIMC = function (poids, taille) {
     let a = Math.pow(taille, 2);
