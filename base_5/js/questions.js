@@ -35,7 +35,7 @@ let IsString = function (texte) {
 }
 
 let AfficherExtensionString = function (texte) {
-    return texte.subst
+    return texte.slice(15,18);
 }
 var NombreEspaceString = function (texte) {
     return texte.split(' ').length - 1;
@@ -48,16 +48,17 @@ var InverseString = function (texte) {
  * Exercices sur les nombres et les caluls mathématiques
  */
 let calculPuissance = function (x, y) {
+    return Math.pow(x,y);
+}
+let valeurAbsolue = function (nombre) {
+    return Math.abs(nombre);
 
 }
-var valeurAbsolue = function (nombre) {
-
+let valeurAbsolueArray = function (array) {
+    return Math.abs(array[0, 1, 2]); 
 }
-var valeurAbsolueArray = function (array) {
-
-}
-var sufaceCercle = function (rayon) {
-
+let sufaceCercle = function (rayon) {
+    return (rayon * rayon) * Math.PI;
 }
 var hypothenuse = function (ab, ac) {
 
