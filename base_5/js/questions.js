@@ -55,14 +55,19 @@ let valeurAbsolue = function (nombre) {
 
 }
 let valeurAbsolueArray = function (array) {
-    return Math.abs(array[0, 1, 2]); 
+    for (i=0; i < array.length; i++) {
+        array[i] = Math.abs(array[i]);
+    }
+    return array
 }
 let sufaceCercle = function (rayon) {
-    return (rayon * rayon) * Math.PI;
+    return Math.round(Math.PI * (rayon * rayon));
 }
 var hypothenuse = function (ab, ac) {
-
+    
 }
-var calculIMC = function (poids, taille) {
+let calculIMC = function (poids, taille) {
+    let a = Math.pow(taille, 2);
+     return Number(((poids)/(a)).toFixed(2));
 
 }
