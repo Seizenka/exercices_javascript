@@ -31,25 +31,23 @@ let SupprEspaceString = function (texte) {
     return texte.replace(/(^\s*)|(\s*$)/g,"");
 }
 let IsString = function (texte) {
-    if(true) {
-    IsString = typeof texte;
-    }
+    return typeof texte === "string";
 }
 
-var AfficherExtensionString = function (texte) {
-
+let AfficherExtensionString = function (texte) {
+    return texte.subst
 }
 var NombreEspaceString = function (texte) {
-
+    return texte.split(' ').length - 1;
 }
 var InverseString = function (texte) {
-
+    return texte.split('').reverse().join('');
 }
 
 /**
  * Exercices sur les nombres et les caluls mathématiques
  */
-var calculPuissance = function (x, y) {
+let calculPuissance = function (x, y) {
 
 }
 var valeurAbsolue = function (nombre) {
