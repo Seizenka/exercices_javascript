@@ -1,0 +1,36 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Covered By Your Grace', cursive;
+    background-color: #75359A;
+
+}
+
+h1, h3, h5 {
+    font-family: 'Pacifico', cursive;
+    color: white;
+   
+}
+
+header {
+    width: 100%;
+    height: 100px;
+   
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    height: 450px;
+   
+}
+
+article {
+    padding-top: 200px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
