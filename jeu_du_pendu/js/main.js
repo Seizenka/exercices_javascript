@@ -18,7 +18,7 @@ function pendu() {
     function comparTab() {
         console.log(comparTab);
         if(lettreDevine.toString() === tabMot.toString()) {
-            alert('Bravo !');
+            alert("Bravo !")
         } else {
             init();
         }
@@ -29,7 +29,7 @@ function pendu() {
         if(lettre === tabMot[0]) {
             console.log(lettreDevine);
             lettreDevine[0] = "B";
-            alert("Bravo !")
+            
             comparTab();//fonction pour comparer les deux tableaux
 
         } else if(lettre === tabMot[1]) {
