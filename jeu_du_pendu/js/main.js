@@ -68,4 +68,4 @@ function pendu() {
 
     
 
-} 
+} //Prochain objectif : jeu du pendu version 2 => raccourcir le code
