@@ -5,16 +5,12 @@ let character = {
     age : 22,
     items_to_give : ["baton-volant"," katana"," bracelet"],
     giveItems: function(){ 
-    character.items_to_give[Math.floor(Math.random() * character.items_to_give.length)]
+        Math.floor(Math.random() * items_to_give);
+    }
     
-    }
-};
-console.log(character["name"]);
-console.log(character["22"]);
+}
 
-character.giveItems();
-
-    for(let key in character) {
-        alert(character[key])//afficher les objets de Korra
-    }
-
+for ( let key in character) {
+    console.log(character[key]);
+}
+console.log(character.items_to_give);
