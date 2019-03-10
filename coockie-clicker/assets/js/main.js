@@ -1,34 +1,128 @@
-//Les variables de base
-let multiplicateur = document.getElementById("multiplicateur");
-let autoclicker = document.getElementById("autoclicker");
-let bonus = docuement.getElementById("bonus");
+//Définir les variables
+let click = document.getElementById("canvas"); //prochain exercice canvas
 let affichage = document.getElementById("affichage");
-let cookie = document.getElementById("canvas");
-
-//Nombre de cookie
-let score = 0;
-//Initialisation du multiplicateur
-let multiplicateur = 1;
-//tableau des prix
-let prix = [0 , 50 , 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 40000, 60000, 80000, 100000];
-let 
-
-let autoclickerBought = false;
+let autoclick = document.getElementById("autoclick");
+let bonus = document.getElementById("bonus");
+let multiplicateur = document.getElementById("multiplicateur");
 
 
 
+//Initialisation des variables numériques
+score = 0;
+clickValue = 1;
+multi = 1;
+multiPrix = 50;
+autoPrix = 500;
+bonusTime = 30;
+bonusPrix = 5000;
 
+//Etape 12, 13 et 14 : désactiver les boutons autoclicker, bonus et multiplicateur
+multiOn = false;
+autoclickOn = false;
+bonusOn = false;
 
+//Le jeu :
 
+//fonction d'affichage
+function displayAll(){
+    click.innerHTML = "Obtenez des cookies !";
+    affichage.innerHTML = score + " cookies";
+    multiplicateur.innerHTML = "Multiplicateur x" + multi + " (Coûte " + multiPrix + " cookies)";
+    autoclick.innerHTML = "Autoclicker (Coûte " + autoPrix + "cookies)";
+    bonus.innerHTML = "bonus 200% (Coûte " + bonusPrix + "cookies)";
+} //on remplace les éléments par du nouveau contenu dans la page HTML
 
+//étape 3 augmenter le score
+function Score(){
+    score += clickValue;
+    displayAll();
+}
 
+//étape 4 le multiplicateur
+function augmenterMultiplicateur(){
+    multi = 1;
+    score -= multiPrix;
+    multiPrix *= multi;
+    clickValue *= multi;
+    displayAll();
+}
 
+//étape 11 l'autoclicker
+function autoclicker(){
+    score -= autoPrix;
+    autoclickOn = true;
+    autoclick.disabled = true;
+    function  clickAuto(){
+        score += 1;
+        displayAll();
+    }
+    clickAuto();
+    setInterval(auto, 1000);
 
+}
 
+function activateBonus(){
+    score -= bonusPrix;
+    bonusOn = true;
+    clickValue /= 2;
+    bonus.innerHTML = "Bonus 200% (Coûte " + bonusPrix + " cookies)";
+    displayAll();
+}
 
+function desactiveBonus() {
+    bonusOn = false;
+    bonusTime = 30;
+    clickValue /= 2;
+    bonus.innerHTML = "Bonus 200% (Coûte " + bonusPrix + " cookies)";
+    displayAll();
+}
 
+function bonusTps() {
+    if (bonusOn){
+        --bonusTime;
+        bonus.innerHTML = "Il vous reste " + bonusTime + " secondes de votre bonus";
+        if (bonusTime === 0){
+            desactiveBonus();
+        }
+    }
+}
 
+//Activation et désactivation des boutons étape 14
 
+function activateButton(){
+    if(!multiOn && score >= multiPrix){
+        multiplicateur.disabled = false; 
+    } //le bouton multiplicateur actif/désactif
+    else {
+        multiplicateur.disabled = true;
+    }
+
+    if(!autoclickOn && score >= autoPrix){
+        autoclick.disabled = false;
+    }//le bouton autoclick actif/désactif
+    else {
+        autoclick.disabled = true;
+    }
+    
+    if(!bonusOn && score >= bonusPrix){
+        bonus.disabled = false;
+    }//le bouton bonus actif/désactif
+    else {
+        bonus.disabled = true;
+    }
+}
+
+//toujours appeler les fonctions en fin
+displayAll();
+activateButton();
+
+//lier nos fonctions dans un événement et les lancer
+click.addEventListener('click', Score); //afficher suite à un clic
+autoclick.addEventListener('click', autoclicker);
+multiplicateur.addEventListener('click', augmenterMultiplicateur);
+bonus.addEventListener('click', activateBonus);
+
+bonusInterval = window.setInterval(bonusTps, 1000);
 
 //Le cookie
 function fillCircle(){
