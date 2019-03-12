@@ -57,9 +57,10 @@ function autoclicker(){
     function  clickAuto(){
         score += 1;
         displayAll();
+        
     }
     clickAuto();
-    setInterval(auto, 1000);
+    setInterval(clickAuto, 1000);
     activateButton();
 
 }
