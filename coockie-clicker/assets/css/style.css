@@ -7,8 +7,8 @@ body {
 
 h1 {
     color:white;
-    padding-left: 30px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -34,7 +34,7 @@ button:hover {
     height: 100%;
 }
 
-section #canvas, #affichage {
+section #canvas {
     margin-left: 450px;
 }
 
@@ -43,5 +43,10 @@ section #canvas, #affichage {
     width: 20%;
     height: 20%;
     margin-bottom: 20px;
+    margin-left: 40%;
+    padding: 5px;
 }
 
+nav {
+    padding-left: 15%;
+}
