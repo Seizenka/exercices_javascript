@@ -1,5 +1,5 @@
 //Définir les variables
-let click = document.getElementById("canvas"); //prochain exercice canvas
+let click = document.getElementById("canvas"); //Le cookie
 let affichage = document.getElementById("affichage");
 let autoclick = document.getElementById("autoclick");
 let bonus = document.getElementById("bonus");
@@ -25,7 +25,6 @@ bonusOn = false;
 
 //fonction d'affichage
 function displayAll(){
-    click.innerHTML = "Obtenez des cookies !";
     affichage.innerHTML = score + " cookies";
     multiplicateur.innerHTML = "Multiplicateur x" + multi + " (Coûte " + multiPrix + " cookies)";
     autoclick.innerHTML = "Autoclicker (Coûte " + autoPrix + "cookies)";
@@ -36,6 +35,7 @@ function displayAll(){
 function Score(){
     score += clickValue;
     displayAll();
+    activateButton();
 }
 
 //étape 4 le multiplicateur
@@ -45,6 +45,7 @@ function augmenterMultiplicateur(){
     multiPrix *= multi;
     clickValue *= multi;
     displayAll();
+    activateButton();
 }
 
 //étape 11 l'autoclicker
@@ -58,6 +59,7 @@ function autoclicker(){
     }
     clickAuto();
     setInterval(auto, 1000);
+    activateButton();
 
 }
 
@@ -67,6 +69,7 @@ function activateBonus(){
     clickValue /= 2;
     bonus.innerHTML = "Bonus 200% (Coûte " + bonusPrix + " cookies)";
     displayAll();
+    activateButton();
 }
 
 function desactiveBonus() {
