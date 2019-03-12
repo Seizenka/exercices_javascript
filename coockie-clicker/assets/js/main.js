@@ -41,6 +41,7 @@ function Score(){
 //étape 4 le multiplicateur
 function augmenterMultiplicateur(){
     multi = 1;
+    multi++;
     score -= multiPrix;
     multiPrix *= multi;
     clickValue *= multi;
@@ -127,7 +128,7 @@ bonus.addEventListener('click', activateBonus);
 
 bonusInterval = window.setInterval(bonusTps, 1000);
 
-//Le cookie
+//Le cookie (pas fini)
 function fillCircle(){
 let c = document.getElementById("canvas");
 let ctx = c.getContext("2d");
