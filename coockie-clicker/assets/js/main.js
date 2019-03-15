@@ -28,7 +28,7 @@ function displayAll(){
     affichage.innerHTML = score + " cookies";
     multiplicateur.innerHTML = "Multiplicateur x" + multi + " (Coûte " + multiPrix + " cookies)";
     autoclick.innerHTML = "Autoclicker (Coûte " + autoPrix + "cookies)";
-    bonus.innerHTML = "bonus 200% (Coûte " + bonusPrix + "cookies)";
+    bonus.innerHTML = "Bonus 200% (Coûte " + bonusPrix + "cookies)";
 } //on remplace les éléments par du nouveau contenu dans la page HTML
 
 //étape 3 augmenter le score
@@ -40,7 +40,7 @@ function Score(){
 
 //étape 4 le multiplicateur
 function augmenterMultiplicateur(){
-    multi = 1;
+    
     multi++;
     score -= multiPrix;
     multiPrix *= multi;
@@ -53,9 +53,10 @@ function augmenterMultiplicateur(){
 function autoclicker(){
     score -= autoPrix;
     autoclickOn = true;
+    autoclick.style.display = "none";
     //autoclick.disabled = true;
     function  clickAuto(){
-        score += 1;
+        score += clickValue;
         displayAll();
         
     }
@@ -68,7 +69,7 @@ function autoclicker(){
 function activateBonus(){
     score -= bonusPrix;
     bonusOn = true;
-    clickValue /= 2;
+    clickValue *= 2;
     bonus.innerHTML = "Bonus 200% (Coûte " + bonusPrix + " cookies)";
     displayAll();
     activateButton();
@@ -166,7 +167,7 @@ ctx.fill();
 ctx.stroke();
 
 ctx.beginPath();
-ctx.arc(150, 230, 15, 0, 2 * Math.PI);
+ctx.arc(130, 230, 15, 0, 2 * Math.PI);
 ctx.fillStyle = "#AD893B";
 ctx.fill();
 ctx.stroke();
@@ -188,5 +189,12 @@ ctx.arc(190, 320, 22, 0, 2 * Math.PI);
 ctx.fillStyle = "#AD893B";
 ctx.fill();
 ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(170, 100, 19, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
+
 
 
