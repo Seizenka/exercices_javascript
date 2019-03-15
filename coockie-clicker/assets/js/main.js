@@ -53,7 +53,7 @@ function augmenterMultiplicateur(){
 function autoclicker(){
     score -= autoPrix;
     autoclickOn = true;
-    autoclick.disabled = true;
+    //autoclick.disabled = true;
     function  clickAuto(){
         score += 1;
         displayAll();
@@ -130,7 +130,7 @@ bonus.addEventListener('click', activateBonus);
 bonusInterval = window.setInterval(bonusTps, 1000);
 
 //Le cookie (pas fini)
-function fillCircle(){
+/*function fillCircle(){
 let c = document.getElementById("canvas");
 let ctx = c.getContext("2d");
 
@@ -139,6 +139,54 @@ ctx.fillStyle="#FFCA57"
 ctx.arc(200, 200, 190, 0, 2 * Math.PI);
 ctx.fill();
 }
-fillCircle(); 
+fillCircle();*/
+
+let c = document.getElementById("canvas");
+let ctx = c.getContext("2d");
+
+//définition des ombres
+ctx.shadowOffsetX = 0; 
+ctx.shadowOffsetY = 0;
+ctx.shadowColor = "black";
+ctx.shadowBlur = 5;
+
+//le cookie entier
+ctx.beginPath();
+ctx.arc(200, 200, 190, 0, 2 * Math.PI);
+ctx.fillStyle = "#FFCA57";
+ctx.fill();
+ctx.strokeStyle = "#AD893B";
+ctx.stroke();
+
+//les pépites de chocolat
+ctx.beginPath();
+ctx.arc(80, 150, 24, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(150, 230, 15, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(320, 250, 20, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(280, 160, 16, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(190, 320, 22, 0, 2 * Math.PI);
+ctx.fillStyle = "#AD893B";
+ctx.fill();
+ctx.stroke();
 
 
