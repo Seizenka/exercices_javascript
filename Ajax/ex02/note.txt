@@ -1,0 +1,34 @@
+//---PRIMFX---//
+//Tuto#14 l'objet XMLHttpRequest deuxième exemple//
+
+//Faire de façon asynchrone : on créé une fonction
+    function requete(fichier){
+        let demo = document.getElementById("demo"); //Recherche la donnée dans le DOM 
+        let xhr = new XMLHttpRequest(); //l'objet XMLHttpRequest
+
+        xhr.onreadystatechange = function(){
+        //traitement de la requête
+            console.log(this);
+            if(this.readyState == 4 && this.status == 200){
+                demo.innerHTML = this.responseText;//-----JSON.stringify pour convertir en chaîne de caractères ---//On affiche le texte dans notre requête via HTML
+                
+            } else if(this.readyState == 4 && this.status == 404){
+                alert('Erreur 404..');
+            }
+        }
+
+        xhr.open("GET", "async/"+fichier, true); //On ouvre le fichier ---via la méthode GET ---True car on veut une asynchrone
+        xhr.responseType = "text"; //On spécifie le type de fichier --- ici du texte ou JSON directement au lieu de faire JSON.parse
+
+        xhr.send();//Envoyer la requête
+
+    }
+                                    //On veut vérifier lorsque le formulaire est envoyé
+document.getElementById('formreq').addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let fichierARecuper = document.getElementById("input-fichier").value;
+    console.log(fichierARecuper);
+    requete(fichierARecuper);
+    return false; //Pour être sûr que le comportement par défaut du formulaire soit annulé autrement dit, qu'il ne nous recharge pas la page
+})
